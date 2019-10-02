@@ -22,3 +22,15 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+cal_class = calendar.TextCalendar()
+
+date_input = input("Please enter date: [Month] [Year]")
+inputs = date_input.split()
+
+if len(inputs)==1:
+  print(cal_class.formatmonth(datetime.today().year, int(inputs[0])))
+elif len(inputs)==2:
+  print(cal_class.formatmonth(int(inputs[1]), int(inputs[0])))
+else:
+  print(cal_class.formatmonth(datetime.today().year, datetime.today().month))
